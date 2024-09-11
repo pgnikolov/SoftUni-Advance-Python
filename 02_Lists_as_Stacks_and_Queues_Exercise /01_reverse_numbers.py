@@ -1,3 +1,3 @@
 nums = input().split()
-
-print(" ".join(nums[::-1]))
+nums_rev = [el for el in nums[::-1]]
+print(" ".join(nums_rev))
