@@ -18,7 +18,6 @@ while True:
     if password == "Done":
         break
 
-
     if len(password) < 8:
         raise PasswordTooShortError("Password must contain at least 8 characters")
 
