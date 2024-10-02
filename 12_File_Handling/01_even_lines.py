@@ -11,4 +11,4 @@ def even_lines(file_path):
                 print(reversed_words)
 
 
-even_lines('text1.txt')
+even_lines('01_text.txt')
