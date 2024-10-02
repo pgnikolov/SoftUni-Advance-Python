@@ -1,13 +1,10 @@
 def line_numbers(input_file, output_file):
+    punctuation_chars = set(r"""!"#$%&'()*+,-./:;<=>?@[]^_`{|}~""")
     total_letters = 0
     total_punctuation = 0
-    punctuation_chars = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
 
-    with open(input_file, 'r') as infile:
-        lines = infile.readlines()
-
-    with open(output_file, 'w') as outfile:
-        for line_number, line in enumerate(lines, start=1):
+    with open(input_file, 'r') as infile, open(output_file, 'w') as outfile:
+        for line_number, line in enumerate(infile, start=1):
             line_letters = sum(c.isalpha() for c in line)
             line_punctuation = sum(c in punctuation_chars for c in line)
 
