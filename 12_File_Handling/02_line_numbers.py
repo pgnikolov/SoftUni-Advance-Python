@@ -1,4 +1,4 @@
-def process_file(input_file, output_file):
+def line_numbers(input_file, output_file):
     total_letters = 0
     total_punctuation = 0
     punctuation_chars = r"""!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"""
@@ -20,4 +20,4 @@ def process_file(input_file, output_file):
 input_filename = '02_text.txt'
 output_filename = '02_output.txt'
 
-process_file(input_filename, output_filename)
+line_numbers(input_filename, output_filename)
