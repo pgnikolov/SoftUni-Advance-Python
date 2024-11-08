@@ -1,4 +1,3 @@
-from project import room
 from project.room import Room
 
 
