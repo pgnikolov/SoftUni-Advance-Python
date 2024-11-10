@@ -4,6 +4,6 @@ ntit = title.replace(" ", "_")
 ntit = ntit.replace(".", "")
 ntit = ntit.replace(",", "")
 ntit = ntit.replace("'", "")
-# ntit = ntit.lower()
+ntit = ntit.lower()
 
 print(ntit)
