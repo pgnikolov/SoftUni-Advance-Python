@@ -2,8 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Meal(ABC):
-    @abstractmethod
-    def __init__(self, name, price, quantity=0):
+    def __init__(self, name: str, price: float, quantity: int):
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -14,7 +13,7 @@ class Meal(ABC):
 
     @name.setter
     def name(self, value):
-        if not value:
+        if value == "":
             raise ValueError("Name cannot be an empty string!")
         self.__name = value
 
@@ -25,9 +24,9 @@ class Meal(ABC):
     @price.setter
     def price(self, value):
         if value <= 0:
-            raise ValueError("Price cannot be less than or equal to zero!")
+            raise ValueError("Invalid price!")
         self.__price = value
 
     @abstractmethod
     def details(self):
-        pass
+        ...
