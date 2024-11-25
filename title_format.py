@@ -7,4 +7,3 @@ ntit = ntit.replace("'", "")
 #ntit = ntit.lower()
 
 print(ntit)
-
