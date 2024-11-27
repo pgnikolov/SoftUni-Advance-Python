@@ -39,6 +39,14 @@ class BaseDiver(ABC):
     def renew_oxy(self):
         pass
 
+    @property
+    def competition_points(self):
+        return self.__competition_points
+
+    @competition_points.setter
+    def competition_points(self, value: float):
+        self.__competition_points = round(value, 1)
+
     def hit(self, fish: BaseFish):
         if self.oxygen_level < fish.time_to_catch:
             self.oxygen_level = 0
