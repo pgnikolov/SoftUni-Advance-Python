@@ -10,17 +10,17 @@ class BaseZone(ABC):
 
     @property
     def code(self):
-        return self.__code
+        return self._code
 
     @code.setter
     def code(self, value):
         if not value.isdigit():
             raise ValueError("Zone code must contain digits only!")
-        self.__code = value
+        self._code = value
 
-    @abstractmethod
     def get_ships(self):
-        pass
+        return sorted(self.ships, key=lambda ship: (-ship.hit_strength, ship.name))
+
 
     @abstractmethod
     def zone_info(self):

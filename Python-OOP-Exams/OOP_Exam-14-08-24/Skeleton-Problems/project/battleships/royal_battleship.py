@@ -6,6 +6,4 @@ class RoyalBattleship(BaseBattleship):
         super().__init__(name, health, hit_strength, 100)
 
     def atack(self):
-        self.ammunition -= 25
-        if self.ammunition < 0:
-            self.ammunition = 0
+        self.ammunition = max(0, (self.ammunition - 25))

@@ -6,6 +6,4 @@ class PirateBattleship(BaseBattleship):
         super().__init__(name, health, hit_strength, 80)
 
     def atack(self):
-        self.ammunition -= 10
-        if self.ammunition < 0:
-            self.ammunition = 0
+        self.ammunition = max(0, (self.ammunition - 10))

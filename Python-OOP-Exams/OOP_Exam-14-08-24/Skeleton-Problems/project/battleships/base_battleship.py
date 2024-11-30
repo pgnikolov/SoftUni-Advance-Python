@@ -13,23 +13,21 @@ class BaseBattleship(ABC):
 
     @property
     def name(self):
-        return self.__name
+        return self._name
 
     @name.setter
     def name(self, value: str):
         if not value.isalpha():
             raise ValueError("Ship name must contain only letters!")
-        self.__name = value
+        self._name = value
 
     @property
     def health(self):
-        return self.__health
+        return self._health
 
     @health.setter
     def health(self, value: int):
-        if value < 0:
-            self.__health = 0
-        self.__health = value
+        self._health = max(value, 0)
 
     def take_damage(self, enemy_battleship: 'BaseBattleship'):
         self.health -= enemy_battleship.hit_strength
